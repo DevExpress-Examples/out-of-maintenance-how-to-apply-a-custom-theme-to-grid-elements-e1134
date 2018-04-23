@@ -1,0 +1,16 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"        
+    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"        
+    xmlns:local="http://schemas.devexpress.com/winfx/2008/xaml/core">
+    
+    <DataTemplate x:Key="{dxg:GridColumnHeaderThemeKey ResourceKey=DragIndicatorTemplate}">
+		<Border Width="6" Background="Red" Height="24">
+			<Border.RenderTransform>
+				<TranslateTransform x:Name="ArrowDownTransform" X="-3" Y="0"/>
+			</Border.RenderTransform>
+		</Border>
+    </DataTemplate>
+    
+</ResourceDictionary>

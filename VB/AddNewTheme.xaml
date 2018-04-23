@@ -1,0 +1,92 @@
+﻿<UserControl x:Class="CustomTheme.AddNewTheme"
+
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+	xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+	xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+	xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+
+	<DockPanel LastChildFill="True">
+		<dx:MeasurePixelSnapper DockPanel.Dock="Top">
+			<GroupBox Header="Options" >
+				<StackPanel Orientation="Vertical">
+					<StackPanel Orientation="Horizontal">
+						<StackPanel Margin="4">
+							<CheckBox IsChecked="{Binding ShowTotalSummary, ElementName=view}">Show total summary</CheckBox>
+							<CheckBox IsChecked="{Binding AutoWidth, ElementName=view}">Auto width</CheckBox>
+						</StackPanel>
+						<StackPanel Margin="4">
+							<CheckBox IsChecked="{Binding ShowColumnHeaders, ElementName=view}">Show headers</CheckBox>
+							<CheckBox IsChecked="{Binding ShowGroupPanel, ElementName=view}">Show group panel</CheckBox>
+						</StackPanel>
+						<StackPanel Margin="4">
+							<CheckBox IsChecked="{Binding ShowVerticalLines, ElementName=view}">Show vertical lines</CheckBox>
+							<CheckBox IsChecked="{Binding ShowHorizontalLines, ElementName=view}">Show horizontal lines</CheckBox>
+						</StackPanel>
+						<StackPanel Margin="4">
+							<CheckBox IsChecked="false" 
+                              Name="navigationCheckBox" 
+                              Checked="navigationCheckBox_Checked" 
+                              Unchecked="navigationCheckBox_Unchecked">Cell navigation</CheckBox>
+							<CheckBox IsChecked="False" Name="multiSelectionCheckBox"
+									  Checked="multiSelectionCheckBox_Checked"
+									  Unchecked="multiSelectionCheckBox_Unchecked">Multi selection</CheckBox>
+						</StackPanel>
+						<StackPanel Margin="4">
+							<CheckBox IsChecked="false" Name="newItemRowCheckBox"
+									  Checked="newItemRowCheckBox_Checked"
+									  Unchecked="newItemRowCheckBox_Unchecked">Show new item row</CheckBox>
+							<CheckBox IsChecked="{Binding ShowAutoFilterRow, ElementName=view}">Show auto filter row</CheckBox>
+						</StackPanel>
+						<StackPanel Margin="4">
+							<CheckBox IsChecked="{Binding ShowIndicator, ElementName=view}">Show indicator</CheckBox>
+						</StackPanel>
+					</StackPanel>
+					<StackPanel Orientation="Horizontal">
+						<Label>Theme:</Label>
+						<ComboBox x:Name="theme" SelectedIndex="0" IsReadOnly="True" Width="100">
+							<ComboBox.Items>
+								<sys:String>Simple</sys:String>
+								<sys:String>Azure</sys:String>
+								<sys:String>Office2007Blue</sys:String>
+								<sys:String>Office2007Black</sys:String>
+								<sys:String>Office2007Silver</sys:String>
+							</ComboBox.Items>
+						</ComboBox>
+					</StackPanel>
+				</StackPanel>
+			</GroupBox>
+		</dx:MeasurePixelSnapper>
+		<dxg:GridControl x:Name="grid" AutoPopulateColumns="True" dx:ThemeManager.ThemeName="{Binding Path=SelectedItem, ElementName=theme}">
+			<dx:ThemeManager.CustomResources>
+				<dx:CustomResourcesList>
+					<dx:ResourceContainer Name="Simple">
+						<dx:ResourceContainer.Resources>
+							<ResourceDictionary Source="/Themes/Simple/Generic.xaml"/>
+						</dx:ResourceContainer.Resources>
+					</dx:ResourceContainer>
+					<dx:ResourceContainer Name="Simple">
+						<dx:ResourceContainer.Resources>
+							<ResourceDictionary Source="/DevExpress.Wpf.Grid.v9.3;component/themes/Azure/Generic.xaml"/>
+						</dx:ResourceContainer.Resources>
+					</dx:ResourceContainer>
+				</dx:CustomResourcesList>
+			</dx:ThemeManager.CustomResources>
+			<dxg:GridControl.GroupSummary>
+				<dx:GridSummaryItem FieldName="Number1" SummaryType="Count" />
+			</dxg:GridControl.GroupSummary>
+			<dxg:GridControl.TotalSummary>
+				<dx:GridSummaryItem FieldName="Number1" SummaryType="Count" />
+				<dx:GridSummaryItem FieldName="Number1" SummaryType="Sum" />
+				<dx:GridSummaryItem FieldName="Text" SummaryType="Count" />
+				<dx:GridSummaryItem FieldName="Number2" SummaryType="Count" />
+			</dxg:GridControl.TotalSummary>
+			<dxg:GridControl.View>
+				<dxg:TableView Name="view" ShowTotalSummary="True" AutoWidth="True" NavigationStyle="Row"/>
+			</dxg:GridControl.View>
+		</dxg:GridControl>
+	</DockPanel>
+</UserControl>
+
