@@ -1,0 +1,19 @@
+﻿<Window x:Class="CustomTheme.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="MainWindow" Height="600" Width="800"
+	xmlns:local="clr-namespace:CustomTheme">
+    <Grid>
+        <TabControl>
+			<TabItem Header="Add New Theme">
+				<local:AddNewTheme/>
+			</TabItem>
+			<TabItem Header="Replace Theme Resources">
+				<local:ReplaceThemeResources/>
+			</TabItem>
+			<TabItem Header="Theming Inline Editors">
+				<local:ThemingInlineEditors/>
+			</TabItem>
+		</TabControl>
+    </Grid>
+</Window>

@@ -1,0 +1,22 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"        
+    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"        
+    xmlns:local="http://schemas.devexpress.com/winfx/2008/xaml/core">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Themes/Simple/ExpandButtons.xaml"/>
+        <ResourceDictionary Source="/Themes/Simple/ColumnHeaderDragIndicator.xaml"/>
+        <ResourceDictionary Source="/Themes/Simple/GridControl.xaml"/>
+        <ResourceDictionary Source="/Themes/Simple/GridItemsContainer.xaml"/>
+        <ResourceDictionary Source="/Themes/Simple/GridView.xaml"/>
+        <ResourceDictionary Source="/Themes/Simple/Rows.xaml"/>
+
+        <ResourceDictionary Source="/Themes/Simple/FilterPanel.xaml"/>
+        <ResourceDictionary Source="/Themes/Simple/ColumnHeader.xaml"/>
+        <ResourceDictionary Source="/Themes/Simple/TotalSummary.xaml"/>
+        <ResourceDictionary Source="/Themes/Simple/ScrollBars.xaml"/>
+		<ResourceDictionary Source="/Themes/Simple/ColumnChooser.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

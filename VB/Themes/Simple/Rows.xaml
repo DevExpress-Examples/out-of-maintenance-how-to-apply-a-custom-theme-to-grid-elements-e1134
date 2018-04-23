@@ -1,0 +1,93 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"        
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"        
+    xmlns:local="http://schemas.devexpress.com/winfx/2008/xaml/core">
+
+    <SolidColorBrush x:Key="{dxg:GridRowThemeKey ResourceKey=GridDataRowDelimiterBrush}" Color="DarkGray"/>
+    
+	<ControlTemplate x:Key="{dxg:GroupRowThemeKey ResourceKey=GroupRowControlContainerTemplate}" TargetType="{x:Type ContentControl}">
+		<Border x:Name="groupBorder" BorderBrush="Black" BorderThickness="1,1,0,0" SnapsToDevicePixels="True">
+			<ContentPresenter/>
+		</Border>
+		<ControlTemplate.Triggers>
+			<DataTrigger Binding="{Binding Path=IsGroupRowVisible}" Value="false">
+				<Setter Property="BorderThickness" TargetName="groupBorder" Value="1,0,0,0"/>
+			</DataTrigger>
+			<DataTrigger Binding="{Binding Path=GroupLevel}" Value="0">
+				<Setter Property="BorderThickness" TargetName="groupBorder" Value="0,0,0,1"/>
+			</DataTrigger>
+		</ControlTemplate.Triggers>
+	</ControlTemplate>
+
+	<ControlTemplate  x:Key="{dxg:GridRowThemeKey ResourceKey=FilterRowTemplate}" TargetType="{x:Type ContentControl}">
+		<Grid>
+			<Border Background="{DynamicResource {dxg:GridRowThemeKey ResourceKey=GridDataRowDelimiterBrush}}" Padding="0,0,0,1">
+				<Border Background="#FF999999">
+					<Grid>
+						<Border x:Name="borderFocused" Visibility="Hidden" Margin="0" SnapsToDevicePixels="True" Background="Blue"/>
+						<ContentPresenter Margin="0"/>
+					</Grid>
+				</Border>
+			</Border>
+			<Border BorderBrush="#FF000000" BorderThickness="1,0,1,0" />
+		</Grid>
+		<ControlTemplate.Triggers>
+			<Trigger Property="dxg:TableView.IsFocusedRow" Value="True">
+				<Setter TargetName="borderFocused" Property="Visibility" Value="Visible"/>
+				<Setter Property="TextBlock.Foreground" Value="{DynamicResource DataRowTextFocusedBrush}"/>
+			</Trigger>
+		</ControlTemplate.Triggers>
+	</ControlTemplate>
+
+	<ControlTemplate x:Key="{dxg:GroupRowThemeKey ResourceKey=GroupRowControlHeaderContentTemplate}" TargetType="{x:Type ContentControl}">
+		<Border x:Name="ContentBorder" TextBlock.Foreground="{DynamicResource GroupGridRowHeaderTextBrush}" BorderBrush="Black" BorderThickness="0">
+			<ContentPresenter/>
+		</Border>
+		<ControlTemplate.Triggers>
+			<DataTrigger Binding="{Binding Path=IsGroupRowVisible}" Value="false">
+				<Setter Property="Visibility" TargetName="ContentBorder" Value="Collapsed"/>
+			</DataTrigger>
+		</ControlTemplate.Triggers>
+	</ControlTemplate>
+	
+    <ControlTemplate x:Key="{dxg:GridRowThemeKey ResourceKey=RowControlContainerTemplate}" TargetType="{x:Type ContentControl}">
+        <Grid x:Name="root">
+            <Border Name="RowContentBorder" BorderBrush="{DynamicResource {dxg:GridRowThemeKey ResourceKey=GridDataRowDelimiterBrush}}" BorderThickness="0,0,0,1">
+                <Border x:Name="border" Background="White">
+                    <Border x:Name="errorBorder" Background="Transparent" Padding="0">
+                        <Grid>
+                            <Border Visibility="Hidden" x:Name="borderFocused" Background="Blue" />
+                            <ContentPresenter/>
+                        </Grid>
+                    </Border>
+                </Border>
+            </Border>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="dxg:TableView.IsFocusedRow" Value="True">
+                <Setter TargetName="borderFocused" Property="Visibility" Value="Visible"/>
+                <Setter TargetName="border" Property="TextBlock.Foreground" Value="White"/>
+            </Trigger>
+            <DataTrigger Binding="{Binding Path=(dxg:GridControl.ActiveView).ShowHorizontalLines, RelativeSource={RelativeSource TemplatedParent}}" Value="False">
+                <Setter TargetName="RowContentBorder" Property="BorderThickness" Value="0"/>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Path=(dxg:RowData.RowData).(dxe:BaseEdit.HasValidationError), RelativeSource={RelativeSource TemplatedParent}}" Value="True">
+                <DataTrigger.EnterActions>
+                    <BeginStoryboard x:Name="errorStoryboard">
+                        <BeginStoryboard.Storyboard>
+                            <Storyboard>
+                                <ColorAnimation BeginTime="00:00:00" From="Transparent" To="#FFFFD9D9" Duration="0:0:0.2" Storyboard.TargetProperty="Background.Color" Storyboard.TargetName="errorBorder"/>
+                            </Storyboard>
+                        </BeginStoryboard.Storyboard>
+                    </BeginStoryboard>
+                </DataTrigger.EnterActions>
+                <DataTrigger.ExitActions>
+                    <RemoveStoryboard BeginStoryboardName="errorStoryboard"/>
+                </DataTrigger.ExitActions>
+            </DataTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+</ResourceDictionary>

@@ -1,0 +1,156 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"        
+	xmlns:utils="http://schemas.devexpress.com/winfx/2008/xaml/core"        
+    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"        
+    xmlns:local="http://schemas.devexpress.com/winfx/2008/xaml/core"
+	xmlns:sys="clr-namespace:System;assembly=mscorlib">
+	
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceDictionary Source="{utils:GridResource themes/HeaderFooterItemsControlStyles.xaml}"/>
+		<ResourceDictionary Source="{utils:GridResource themes/DefaultGridViewStyles.xaml}"/>
+	</ResourceDictionary.MergedDictionaries>
+
+	<ControlTemplate x:Key="{dxg:TotalSummaryThemeKey ResourceKey=FootersContentTemplate}" TargetType="{x:Type ContentControl}">
+		<ContentPresenter Margin="0,1,0,0"/>
+	</ControlTemplate>
+
+	<Style x:Key="{dxg:TableViewThemeKey ResourceKey=GroupPanelDragTextStyle}" TargetType="TextBlock">
+		<Setter Property="Text" Value="{dxg:GridControlStringId GridGroupPanelText}"/>
+		<Setter Property="VerticalAlignment" Value="Center"/>
+		<Setter Property="FontSize" Value="11"/>
+		<Setter Property="Foreground" Value="Black"/>
+		<Setter Property="Margin" Value="8"/>
+	</Style>
+	
+    <ControlTemplate x:Key="{dxg:TableViewThemeKey ResourceKey=GroupPanelContentTemplate}" TargetType="{x:Type ContentControl}">
+        <utils:MeasurePixelSnapper>
+            <Border x:Name="GroupPanelBorder" HorizontalAlignment="Stretch" Width="Auto" Background="Transparent" BorderThickness="1">
+                <Grid>
+                    <TextBlock x:Name="GroupPanelDragText" Style="{DynamicResource {dxg:TableViewThemeKey ResourceKey=GroupPanelDragTextStyle}}"/>
+                    <ItemsControl x:Name="groupPanelItemsControl" Style="{DynamicResource {dxg:GroupRowThemeKey ResourceKey=GroupItemsControlStyle}}"/>
+                </Grid>
+            </Border>
+        </utils:MeasurePixelSnapper>
+        <ControlTemplate.Triggers>
+            <DataTrigger Binding="{Binding Path=Grid.IsGrouped, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type dxg:TableView}}}" Value="true">
+                <Setter TargetName="GroupPanelBorder" Property="Margin" Value="8,8,8,8"/>
+                <Setter TargetName="GroupPanelDragText" Property="Visibility" Value="Collapsed" />
+            </DataTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxg:TableViewThemeKey ResourceKey=ScrollViewerTemplate}">
+        <DockPanel ClipToBounds="True" SnapsToDevicePixels="true">
+            <ContentControl Name="PART_GroupPanel" DockPanel.Dock="Top" Template="{DynamicResource {dxg:TableViewThemeKey ResourceKey=GroupPanelContentTemplate}}" />
+            <ContentControl Name="PART_HeadersPanel" DockPanel.Dock="Top" ContentTemplate="{Binding Path=(dxg:GridControl.ActiveView).HeaderTemplate, RelativeSource={RelativeSource TemplatedParent}}"/>
+            <dxg:AdditionalRowItemsControl DockPanel.Dock="Top">
+				<dxg:AutoFilterRowControl x:Name="PART_FilterRow"
+										  RowTemplate="{DynamicResource {dxg:GridRowThemeKey ResourceKey=FilterRowTemplate}}"
+										  ItemTemplate="{DynamicResource {dxg:GridRowThemeKey ResourceKey=AutoFilterRowItemTemplate}}"
+										  DataContext="{Binding Path=(dxg:GridControl.ActiveView).AutoFilterRowData, RelativeSource={RelativeSource TemplatedParent}}"
+										  dxg:RowData.RowData="{Binding}"/>
+				<dxg:NewItemRowControl x:Name="PART_NewItemRow"
+									   RowTemplate="{DynamicResource {dxg:GridRowThemeKey ResourceKey=NewItemRowTemplate}}"
+									   ItemTemplate="{DynamicResource {dxg:GridRowThemeKey ResourceKey=NewItemRowItemTemplate}}"
+									   DataContext="{Binding Path=(dxg:GridControl.ActiveView).NewItemRowData, RelativeSource={RelativeSource TemplatedParent}}"
+									   dxg:RowData.RowData="{Binding}" Visibility="Collapsed"/>
+			</dxg:AdditionalRowItemsControl>
+            <Grid ClipToBounds="True">
+                <Grid Margin="1,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <ScrollContentPresenter Name="PART_ScrollContentPresenter" CanContentScroll="True" Content="{dxg:GridViewDataPresenter}"/>
+                    <ContentControl 
+							x:Name="PART_FootersPanel" 
+							Grid.Row="1"
+							ContentTemplate="{Binding Path=(dxg:GridControl.ActiveView).FooterTemplate, RelativeSource={RelativeSource TemplatedParent}}">
+                    </ContentControl>
+                    <ContentControl x:Name="PART_FilterPanel" Grid.Row="2" Grid.ColumnSpan="1"
+									Template="{DynamicResource {dxg:FilteringThemeKey ResourceKey=FilterPanelTemplate}}"
+									Style="{DynamicResource {dxg:FilteringThemeKey ResourceKey=FilterPanelStyle}}"
+									DataContext="{Binding Path=(dxg:GridControl.ActiveView), RelativeSource={RelativeSource Self}}"/>
+                    <ScrollBar Grid.Column="1" Margin="0,0,1,0" Grid.RowSpan="3" Name="PART_VerticalScrollBar"/>
+                    <ScrollBar Grid.Row="3" Name="PART_HorizontalScrollBar" Margin="0,0,0,1"/>
+                    <Border Grid.Row="3" Grid.Column="1" x:Name="PART_HorizontalScrollCorner" Margin="0,0,1,1" Background="White">
+                    </Border>
+                </Grid>
+                <Border 
+					x:Name="outerBorder"
+					HorizontalAlignment="Stretch"
+					BorderBrush="Black" 
+					BorderThickness="1,0,1,1">
+                </Border>
+            </Grid>
+        </DockPanel>
+        <ControlTemplate.Triggers>
+            <DataTrigger Binding="{Binding Path=ShowColumnHeaders, RelativeSource={RelativeSource TemplatedParent}}" Value="false">
+                <Setter TargetName="outerBorder" Property="BorderThickness" Value="1" />
+                <Setter TargetName="PART_ScrollContentPresenter" Property="Margin" Value="0,1,0,0" />
+            </DataTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <DataTemplate x:Key="{dxg:TotalSummaryThemeKey ResourceKey=TotalSummaryItemTemplate}">
+		<Label HorizontalAlignment="Right" FontSize="13" Foreground="Black" VerticalAlignment="Center" Content="{Binding TotalSummaryText}"/>
+	</DataTemplate>
+	<DataTemplate x:Key="{dxg:GroupRowThemeKey ResourceKey=GroupValueTemplate}">
+		<StackPanel VerticalAlignment="Center" Orientation="Horizontal" Name="defaultGroupValueTemplateStackPanel">
+			<TextBlock Text="{Binding Path=Column.HeaderCaption}"/>
+			<TextBlock Text=": "/>
+			<TextBlock HorizontalAlignment="Left" Text="{Binding Path=Value}"/>
+		</StackPanel>
+	</DataTemplate>
+    <DataTemplate x:Key="{dxg:GroupRowThemeKey ResourceKey=GroupRowTemplate}">
+        <dx:MeasurePixelSnapper>
+            <Border x:Name="groupRowBorder" DockPanel.Dock="Top" HorizontalAlignment="Stretch" Width="Auto" Background="Transparent">
+                <Grid>
+                    <Border HorizontalAlignment="Stretch" Visibility="Hidden" x:Name="borderFocused" Background="Blue"/>
+                    <DockPanel LastChildFill="false" TextBlock.FontSize="13">
+                        <dxg:GridGroupExpandButton x:Name="Toggle" Content="{Binding Path=TemplatedParent, RelativeSource={RelativeSource Self}}" Margin="8,0,0,0"/>
+                        <local:DataContentPresenter Margin="15,0,0,0"
+				        Content="{Binding Path=GroupValue}"
+					    ContentTemplateSelector="{Binding Path=Column.ActualGroupValueTemplateSelector}"/>
+						<ItemsControl ItemsSource="{Binding Path=GroupSummaryData}" DockPanel.Dock="Right" HorizontalAlignment="Right">
+							<ItemsControl.ItemsPanel>
+								<ItemsPanelTemplate>
+									<StackPanel Orientation="Horizontal"/>
+								</ItemsPanelTemplate>
+							</ItemsControl.ItemsPanel>
+							<ItemsControl.ItemTemplate>
+								<DataTemplate>
+									<local:DataContentPresenter Margin="0,0,5,0" VerticalAlignment="Center" ContentTemplateSelector="{Binding Path=(dxg:GridControl.ActiveView).ActualGroupSummaryItemTemplateSelector, RelativeSource={RelativeSource TemplatedParent}}" />
+								</DataTemplate>
+							</ItemsControl.ItemTemplate>
+						</ItemsControl>
+					</DockPanel>
+                </Grid>
+            </Border>
+        </dx:MeasurePixelSnapper>
+		<DataTemplate.Triggers>
+			<Trigger Property="dxg:TableView.IsFocusedRow" Value="true">
+                <Setter Property="Visibility" TargetName="borderFocused" Value="Visible"/>
+				<Setter Property="TextBlock.Foreground" TargetName="groupRowBorder" Value="White"/>
+            </Trigger>
+		</DataTemplate.Triggers>
+	</DataTemplate>
+
+	<Style x:Key="{dxg:GridRowThemeKey ResourceKey=CellStyle}" TargetType="{x:Type dxg:CellContentPresenter}">
+		<Setter Property="Background" Value="Transparent"/>
+		<Setter Property="MinHeight" Value="19"/>
+		<Style.Triggers>
+			<Trigger Property="dxg:GridViewBase.IsFocusedCell" Value="true">
+				<Setter Property="Background" Value="LightGray"/>
+				<Setter Property="TextBlock.Foreground" Value="Black"/>
+			</Trigger>
+		</Style.Triggers>
+	</Style>
+</ResourceDictionary>
