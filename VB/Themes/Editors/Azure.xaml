@@ -1,0 +1,6 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors">
+	<Style TargetType="{x:Type dxe:TextEdit}" BasedOn="{StaticResource {x:Type dxe:TextEdit}}">
+		<Setter Property="Foreground" Value="Red" />
+	</Style>
+</ResourceDictionary>
+	

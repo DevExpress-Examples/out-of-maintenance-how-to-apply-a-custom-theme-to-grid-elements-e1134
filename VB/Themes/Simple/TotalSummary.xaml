@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" xmlns:local="http://schemas.devexpress.com/winfx/2008/xaml/core">
+
+    <ControlTemplate x:Key="{dxg:TotalSummaryThemeKey ResourceKey=TotalSummaryControlTemplate}">
+        <Border Name="border" Margin="2,3,2,4" VerticalAlignment="Stretch" Height="Auto" CornerRadius="3,3,3,3" Padding="1,1,1,1" BorderBrush="Black" BorderThickness="1">
+            <ContentPresenter Content="{Binding}" ContentTemplateSelector="{Binding Path=(dxg:GridControl.ActiveView).ActualTotalSummaryItemTemplateSelector, RelativeSource={RelativeSource TemplatedParent}}" VerticalAlignment="Center" />
+        </Border>
+        <ControlTemplate.Triggers>
+            <DataTrigger Binding="{Binding Path=HasTotalSummaries}" Value="false">
+                <Setter Property="Visibility" Value="Hidden" TargetName="border" />
+            </DataTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+</ResourceDictionary>
