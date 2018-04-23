@@ -1,0 +1,79 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" xmlns:dxgt="http://schemas.devexpress.com/winfx/2008/xaml/grid/themekeys" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxbt="http://schemas.devexpress.com/winfx/2008/xaml/bars/themekeys" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:dxcore="http://schemas.devexpress.com/winfx/2008/xaml/core">
+
+    <Style x:Key="{dxgt:TableViewThemeKey ThemeName=Simple, ResourceKey=ColumnChooserDragTextStyle}" TargetType="TextBlock">
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="Margin" Value="35,4" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <ControlTemplate x:Key="{dxt:FloatingContainerThemeKey ThemeName=Simple, ResourceKey=FloatingContainerSizeGripTemplate}" TargetType="{x:Type Thumb}">
+        <Grid HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="16" Height="16">
+            <Path Width="9.99999" Height="10" Stretch="Fill" Fill="Black" Data="F1 M 0,7.99999L 2,7.99999L 2,9.99999L 0,9.99999L 0,7.99999 Z M 3.99997,8L 5.99997,8L 5.99997,10L 3.99997,10L 3.99997,8 Z M 7.99998,8L 9.99998,8L 9.99998,10L 7.99998,10L 7.99998,8 Z M 7.99998,4L 9.99998,4L 9.99998,6L 7.99998,6L 7.99998,4 Z M 7.99999,0L 9.99999,0L 9.99999,2L 7.99999,2L 7.99999,0 Z M 4,4L 6,4L 6,6L 4,6L 4,4 Z " />
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxt:FloatingContainerThemeKey ThemeName=Simple, ResourceKey=FloatingContainerCloseButtonTemplate}" TargetType="{x:Type Button}">
+        <Grid Background="Transparent" x:Name="grid">
+            <Path x:Name="path" Width="14" Height="14" Stretch="Fill" Fill="#FF777777" Data="F1 M 12,0L 14,2.00006L 9.00003,7L 14,12L 12,14L 7,9.00003L 2,14L 0,12L 5,7L 3.05176e-005,2.00006L 2.00006,6.10352e-005L 7,5L 12,0 Z " HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Fill" TargetName="path" Value="#FF444444" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Fill" TargetName="path" Value="#FF111111" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" TargetName="grid" Value="0.35" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <DataTemplate x:Key="{dxt:FloatingContainerThemeKey ThemeName=Simple, ResourceKey=FloatingContainerTemplate}">
+        <Grid>
+            <Border BorderBrush="Black" BorderThickness="1" Background="White">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Border Height="25" DockPanel.Dock="Top" Background="#FFAAAAAA">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <ContentPresenter Margin="5,0,0,0" VerticalAlignment="Center" Content="{Binding Path=Container.Caption, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <Thumb Template="{DynamicResource {dxt:FloatingContainerThemeKey IsVisibleInBlend=True, ThemeName=Office2007Black, ResourceKey=FloatingContainerDragWidgetTemplate}}" x:Name="PART_DragWidget" Grid.Column="0" Grid.ColumnSpan="1" />
+                            <Button Grid.Column="1" x:Name="PART_CloseButton" Cursor="Hand" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="2,2,4,2" Width="21" Height="21" Template="{DynamicResource {dxt:FloatingContainerThemeKey ThemeName=Simple, ResourceKey=FloatingContainerCloseButtonTemplate}}" />
+                        </Grid>
+                    </Border>
+                    <Grid Grid.Row="1" Background="{DynamicResource {dxt:FloatingContainerThemeKey ThemeName=Office2007Black, ResourceKey=FloatingContainerBackground}}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <ContentPresenter x:Name="PART_ContainerContent" Content="{Binding}" />
+                        <StackPanel HorizontalAlignment="Stretch" x:Name="PART_StatusPanel" VerticalAlignment="Bottom" Height="Auto" Grid.Row="1">
+                            <Border HorizontalAlignment="Right" Height="Auto" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0,0,0,0">
+                                <Thumb Template="{DynamicResource {dxt:FloatingContainerThemeKey ThemeName=Simple, ResourceKey=FloatingContainerSizeGripTemplate}}" Cursor="SizeNWSE" HorizontalAlignment="Right" x:Name="PART_SizeGrip" VerticalAlignment="Bottom" />
+                            </Border>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+            </Border>
+            <Control Template="{DynamicResource {dxt:FloatingContainerThemeKey ThemeName=Office2007Black, ResourceKey=FloatingContainerResizeFrame}}" Focusable="False" />
+        </Grid>
+        <DataTemplate.Triggers>
+            <DataTrigger Binding="{Binding Path=(dxcore:FloatingContainer.FloatingContainer).AllowSizing, RelativeSource={RelativeSource Self}}" Value="false">
+                <Setter Property="Visibility" TargetName="PART_StatusPanel" Value="Collapsed" />
+            </DataTrigger>
+        </DataTemplate.Triggers>
+    </DataTemplate>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey ThemeName=Simple, FullName=DevExpress.Xpf.Core.FloatingWindowContainer}" TargetType="{x:Type dxcore:FloatingWindowContainer}">
+        <Setter Property="ContainerTemplate" Value="{DynamicResource {dxdst:FloatingContainerThemeKey ThemeName=Simple, ResourceKey=FloatingContainerTemplate}}" />
+    </Style>
+    
+</ResourceDictionary>
