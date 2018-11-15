@@ -1,3 +1,11 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [AddNewTheme.xaml.cs](./CS/AddNewTheme.xaml.cs) (VB: [AddNewTheme.xaml.vb](./VB/AddNewTheme.xaml.vb))
+* [MainWindow.xaml](./CS/MainWindow.xaml) (VB: [MainWindow.xaml](./VB/MainWindow.xaml))
+* [ReplaceThemeResources.xaml](./CS/ReplaceThemeResources.xaml) (VB: [ReplaceThemeResources.xaml.vb](./VB/ReplaceThemeResources.xaml.vb))
+* [ReplaceThemeResources.xaml.cs](./CS/ReplaceThemeResources.xaml.cs) (VB: [ReplaceThemeResources.xaml.vb](./VB/ReplaceThemeResources.xaml.vb))
+<!-- default file list end -->
 # How to apply a custom theme to grid elements
 
 
