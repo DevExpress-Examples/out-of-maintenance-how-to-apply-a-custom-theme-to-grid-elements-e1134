@@ -1,13 +1,13 @@
 <!-- default file list -->
 *Files to look at*:
 
-* [AddNewTheme.xaml](./CS/DXGridCustomTheme/AddNewTheme.xaml) (VB: [AddNewTheme.xaml.vb](./VB/DXGridCustomTheme/AddNewTheme.xaml.vb))
+* [AddNewTheme.xaml](./CS/DXGridCustomTheme/AddNewTheme.xaml) (VB: [AddNewTheme.xaml](./VB/DXGridCustomTheme/AddNewTheme.xaml))
 * [AddNewTheme.xaml.cs](./CS/DXGridCustomTheme/AddNewTheme.xaml.cs) (VB: [AddNewTheme.xaml.vb](./VB/DXGridCustomTheme/AddNewTheme.xaml.vb))
 * [Converter.cs](./CS/DXGridCustomTheme/Converter.cs) (VB: [Converter.vb](./VB/DXGridCustomTheme/Converter.vb))
 * [MainWindow.xaml](./CS/DXGridCustomTheme/MainWindow.xaml) (VB: [MainWindow.xaml](./VB/DXGridCustomTheme/MainWindow.xaml))
-* [MainWindow.xaml.cs](./CS/DXGridCustomTheme/MainWindow.xaml.cs) (VB: [MainWindow.xaml](./VB/DXGridCustomTheme/MainWindow.xaml))
+* [MainWindow.xaml.cs](./CS/DXGridCustomTheme/MainWindow.xaml.cs) (VB: [MainWindow.xaml.vb](./VB/DXGridCustomTheme/MainWindow.xaml.vb))
 * [ReplaceThemeResources.xaml](./CS/DXGridCustomTheme/ReplaceThemeResources.xaml) (VB: [ReplaceThemeResources.xaml](./VB/DXGridCustomTheme/ReplaceThemeResources.xaml))
-* [ReplaceThemeResources.xaml.cs](./CS/DXGridCustomTheme/ReplaceThemeResources.xaml.cs) (VB: [ReplaceThemeResources.xaml](./VB/DXGridCustomTheme/ReplaceThemeResources.xaml))
+* [ReplaceThemeResources.xaml.cs](./CS/DXGridCustomTheme/ReplaceThemeResources.xaml.cs) (VB: [ReplaceThemeResources.xaml.vb](./VB/DXGridCustomTheme/ReplaceThemeResources.xaml.vb))
 * [ColumnChooser.xaml](./CS/DXGridCustomTheme/Themes/Simple/ColumnChooser.xaml) (VB: [ColumnChooser.xaml](./VB/DXGridCustomTheme/Themes/Simple/ColumnChooser.xaml))
 * [ColumnHeader.xaml](./CS/DXGridCustomTheme/Themes/Simple/ColumnHeader.xaml) (VB: [ColumnHeader.xaml](./VB/DXGridCustomTheme/Themes/Simple/ColumnHeader.xaml))
 * [ColumnHeaderDragIndicator.xaml](./CS/DXGridCustomTheme/Themes/Simple/ColumnHeaderDragIndicator.xaml) (VB: [ColumnHeaderDragIndicator.xaml](./VB/DXGridCustomTheme/Themes/Simple/ColumnHeaderDragIndicator.xaml))
@@ -21,7 +21,7 @@
 * [Rows.xaml](./CS/DXGridCustomTheme/Themes/Simple/Rows.xaml) (VB: [Rows.xaml](./VB/DXGridCustomTheme/Themes/Simple/Rows.xaml))
 * [ScrollBars.xaml](./CS/DXGridCustomTheme/Themes/Simple/ScrollBars.xaml) (VB: [ScrollBars.xaml](./VB/DXGridCustomTheme/Themes/Simple/ScrollBars.xaml))
 * [TotalSummary.xaml](./CS/DXGridCustomTheme/Themes/Simple/TotalSummary.xaml) (VB: [TotalSummary.xaml](./VB/DXGridCustomTheme/Themes/Simple/TotalSummary.xaml))
-* [ThemingInlineEditors.xaml](./CS/DXGridCustomTheme/ThemingInlineEditors.xaml) (VB: [ThemingInlineEditors.xaml.vb](./VB/DXGridCustomTheme/ThemingInlineEditors.xaml.vb))
+* [ThemingInlineEditors.xaml](./CS/DXGridCustomTheme/ThemingInlineEditors.xaml) (VB: [ThemingInlineEditors.xaml](./VB/DXGridCustomTheme/ThemingInlineEditors.xaml))
 * [ThemingInlineEditors.xaml.cs](./CS/DXGridCustomTheme/ThemingInlineEditors.xaml.cs) (VB: [ThemingInlineEditors.xaml.vb](./VB/DXGridCustomTheme/ThemingInlineEditors.xaml.vb))
 * [Converter.cs](./CS/Simple/Converter.cs) (VB: [Converter.vb](./VB/Simple/Converter.vb))
 * [Generic.xaml](./CS/Simple/Themes/Generic.xaml) (VB: [Generic.xaml](./VB/Simple/Themes/Generic.xaml))
