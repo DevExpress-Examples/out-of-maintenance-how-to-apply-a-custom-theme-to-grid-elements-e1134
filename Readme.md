@@ -1,11 +1,11 @@
 <!-- default file list -->
 *Files to look at*:
 
-* [AddNewTheme.xaml](./CS/DXGridCustomTheme/AddNewTheme.xaml) (VB: [AddNewTheme.xaml.vb](./VB/DXGridCustomTheme/AddNewTheme.xaml.vb))
+* [AddNewTheme.xaml](./CS/DXGridCustomTheme/AddNewTheme.xaml) (VB: [AddNewTheme.xaml](./VB/DXGridCustomTheme/AddNewTheme.xaml))
 * [AddNewTheme.xaml.cs](./CS/DXGridCustomTheme/AddNewTheme.xaml.cs) (VB: [AddNewTheme.xaml.vb](./VB/DXGridCustomTheme/AddNewTheme.xaml.vb))
 * [MainWindow.xaml](./CS/DXGridCustomTheme/MainWindow.xaml) (VB: [MainWindow.xaml](./VB/DXGridCustomTheme/MainWindow.xaml))
-* [MainWindow.xaml.cs](./CS/DXGridCustomTheme/MainWindow.xaml.cs) (VB: [MainWindow.xaml](./VB/DXGridCustomTheme/MainWindow.xaml))
-* [ReplaceThemeResources.xaml](./CS/DXGridCustomTheme/ReplaceThemeResources.xaml) (VB: [ReplaceThemeResources.xaml.vb](./VB/DXGridCustomTheme/ReplaceThemeResources.xaml.vb))
+* [MainWindow.xaml.cs](./CS/DXGridCustomTheme/MainWindow.xaml.cs) (VB: [MainWindow.xaml.vb](./VB/DXGridCustomTheme/MainWindow.xaml.vb))
+* [ReplaceThemeResources.xaml](./CS/DXGridCustomTheme/ReplaceThemeResources.xaml) (VB: [ReplaceThemeResources.xaml](./VB/DXGridCustomTheme/ReplaceThemeResources.xaml))
 * [ReplaceThemeResources.xaml.cs](./CS/DXGridCustomTheme/ReplaceThemeResources.xaml.cs) (VB: [ReplaceThemeResources.xaml.vb](./VB/DXGridCustomTheme/ReplaceThemeResources.xaml.vb))
 * [ColumnChooser.xaml](./CS/DXGridCustomTheme/Themes/Simple/ColumnChooser.xaml) (VB: [ColumnChooser.xaml](./VB/DXGridCustomTheme/Themes/Simple/ColumnChooser.xaml))
 * [ColumnHeader.xaml](./CS/DXGridCustomTheme/Themes/Simple/ColumnHeader.xaml) (VB: [ColumnHeader.xaml](./VB/DXGridCustomTheme/Themes/Simple/ColumnHeader.xaml))
@@ -21,7 +21,7 @@
 * [ScrollBars.xaml](./CS/DXGridCustomTheme/Themes/Simple/ScrollBars.xaml) (VB: [ScrollBars.xaml](./VB/DXGridCustomTheme/Themes/Simple/ScrollBars.xaml))
 * [TotalSummary.xaml](./CS/DXGridCustomTheme/Themes/Simple/TotalSummary.xaml) (VB: [TotalSummary.xaml](./VB/DXGridCustomTheme/Themes/Simple/TotalSummary.xaml))
 * [ThemingInlineEditors.xaml](./CS/DXGridCustomTheme/ThemingInlineEditors.xaml) (VB: [ThemingInlineEditors.xaml](./VB/DXGridCustomTheme/ThemingInlineEditors.xaml))
-* [ThemingInlineEditors.xaml.cs](./CS/DXGridCustomTheme/ThemingInlineEditors.xaml.cs) (VB: [ThemingInlineEditors.xaml](./VB/DXGridCustomTheme/ThemingInlineEditors.xaml))
+* [ThemingInlineEditors.xaml.cs](./CS/DXGridCustomTheme/ThemingInlineEditors.xaml.cs) (VB: [ThemingInlineEditors.xaml.vb](./VB/DXGridCustomTheme/ThemingInlineEditors.xaml.vb))
 * [Generic.xaml](./CS/Simple/Themes/Generic.xaml) (VB: [Generic.xaml](./VB/Simple/Themes/Generic.xaml))
 * [ColumnHeader.xaml](./CS/Simple/Themes/Generic/ColumnHeader.xaml) (VB: [ColumnHeader.xaml](./VB/Simple/Themes/Generic/ColumnHeader.xaml))
 * [DefaultGridViewStyles.xaml](./CS/Simple/Themes/Generic/DefaultGridViewStyles.xaml) (VB: [DefaultGridViewStyles.xaml](./VB/Simple/Themes/Generic/DefaultGridViewStyles.xaml))
