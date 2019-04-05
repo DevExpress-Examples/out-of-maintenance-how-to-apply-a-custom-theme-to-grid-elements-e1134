@@ -1,11 +1,11 @@
 <!-- default file list -->
 *Files to look at*:
 
-* [AddNewTheme.xaml](./CS/AddNewTheme.xaml) (VB: [AddNewTheme.xaml.vb](./VB/AddNewTheme.xaml.vb))
+* [AddNewTheme.xaml](./CS/AddNewTheme.xaml) (VB: [AddNewTheme.xaml](./VB/AddNewTheme.xaml))
 * [AddNewTheme.xaml.cs](./CS/AddNewTheme.xaml.cs) (VB: [AddNewTheme.xaml.vb](./VB/AddNewTheme.xaml.vb))
 * [MainWindow.xaml](./CS/MainWindow.xaml) (VB: [MainWindow.xaml](./VB/MainWindow.xaml))
-* [MainWindow.xaml.cs](./CS/MainWindow.xaml.cs) (VB: [MainWindow.xaml](./VB/MainWindow.xaml))
-* [ReplaceThemeResources.xaml](./CS/ReplaceThemeResources.xaml) (VB: [ReplaceThemeResources.xaml.vb](./VB/ReplaceThemeResources.xaml.vb))
+* [MainWindow.xaml.cs](./CS/MainWindow.xaml.cs) (VB: [MainWindow.xaml.vb](./VB/MainWindow.xaml.vb))
+* [ReplaceThemeResources.xaml](./CS/ReplaceThemeResources.xaml) (VB: [ReplaceThemeResources.xaml](./VB/ReplaceThemeResources.xaml))
 * [ReplaceThemeResources.xaml.cs](./CS/ReplaceThemeResources.xaml.cs) (VB: [ReplaceThemeResources.xaml.vb](./VB/ReplaceThemeResources.xaml.vb))
 * [Azure.xaml](./CS/Themes/Editors/Azure.xaml) (VB: [Azure.xaml](./VB/Themes/Editors/Azure.xaml))
 * [Emerald.xaml](./CS/Themes/Editors/Emerald.xaml) (VB: [Emerald.xaml](./VB/Themes/Editors/Emerald.xaml))
@@ -24,7 +24,7 @@
 * [Scrollbars.xaml](./CS/Themes/Simple/Scrollbars.xaml) (VB: [Scrollbars.xaml](./VB/Themes/Simple/Scrollbars.xaml))
 * [TotalSummary.xaml](./CS/Themes/Simple/TotalSummary.xaml) (VB: [TotalSummary.xaml](./VB/Themes/Simple/TotalSummary.xaml))
 * [ThemingInlineEditors.xaml](./CS/ThemingInlineEditors.xaml) (VB: [ThemingInlineEditors.xaml](./VB/ThemingInlineEditors.xaml))
-* [ThemingInlineEditors.xaml.cs](./CS/ThemingInlineEditors.xaml.cs) (VB: [ThemingInlineEditors.xaml](./VB/ThemingInlineEditors.xaml))
+* [ThemingInlineEditors.xaml.cs](./CS/ThemingInlineEditors.xaml.cs) (VB: [ThemingInlineEditors.xaml.vb](./VB/ThemingInlineEditors.xaml.vb))
 <!-- default file list end -->
 # How to apply a custom theme to grid elements
 
